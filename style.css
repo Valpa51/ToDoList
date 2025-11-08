@@ -1,37 +1,92 @@
 *{
     margin: 0 auto;
-    width: 80%;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+main{
+    width: 100%;
+}
+
 header{
-    background-color: aquamarine;
+        background-image: linear-gradient(rgb(61, 160, 127),aquamarine);
     padding-top: 1%;
     padding-bottom: 1%;
 }
 
 #logo img{
-    width: 50%;
-    border: 2px solid red;
-
+    width: 65%;
 }
 
 #logo{
+    width: 10%;
     display: flex;
-    border: 2px solid red;
+    margin:0;
 }
 
 .InRow{
     display: flex;
     width: 100%;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-start;
+    position: relative;
 }
 
 #HeadH1{
-    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    width: 100%;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: aquamarine;
+    cursor: pointer;
+}
+
+
+
+footer{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-image: linear-gradient(aquamarine,rgb(39, 105, 83));
+}
+
+.dubna{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    position: relative;
+}
+
+.InColumnFot{
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    top:50%;
+    transform: translateY(-50%);
+    gap:4px;
+}
+
+#pLogo{
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+#dubnaImg{
+    width: 30%;
 }
