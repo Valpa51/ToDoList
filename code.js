@@ -1,14 +1,15 @@
 const button = document.querySelector("#addTask");
-const title = document.querySelector("#title");
-const task = document.querySelector("#task");
+const title = document.querySelector(".title");
+const task = document.querySelector(".task");
 const tasks = document.querySelector(".borders");
 
 const list_tasks = [];
 
 function UpdateTasks(list){
+    tasks.innerHTML = "";
     for (let i = 0; i < list.length; i++)
     {
-        let str2 = `<p><span>${list[i].title + ": " + list[i].task}</span></p>`; //отделить часть текстовую от управления
+        let str2 = `<p>${list[i].title + ": " + list[i].task}</p>`; //отделить часть текстовую от управления
         let str = list[i].title + ": " + list[i].task;
         tasks.innerHTML += str2;
     }

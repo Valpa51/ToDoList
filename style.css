@@ -8,7 +8,8 @@ main{
 }
 
 header{
-        background-image: linear-gradient(rgb(61, 160, 127),aquamarine);
+    background-image: linear-gradient(0.25turn,#1b2139 30%,#fb66be 50%,#1b2139 70%);
+    border: 1px solid rgba(255,255,255,.35);
     padding-top: 1%;
     padding-bottom: 1%;
 }
@@ -40,6 +41,7 @@ header{
     width: 100%;
     top:50%;
     transform:translateY(-50%);
+    color: black;
 }
 
 a{
@@ -56,7 +58,9 @@ a:hover{
 main{
     padding-top: 1%;
     padding-bottom: 1%;
-    background-color: aquamarine;
+    background-image: url("image/wallhaven-z82evv.jpg");
+    background-size:cover;
+    background-position: center;
 }
 
 .ToDo{
@@ -74,15 +78,72 @@ main{
     width: 100%;
 }
 
-#plus img{
-    width: 30px;
-}
-
 .inputTask{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: nowrap;
     gap:20px;
+    border: 2px solid rgba(254,1,154,.3);
+    margin-top: 15px;
+    margin-bottom: 20px;
+    width: 30%;
+    backdrop-filter: blur(10px);
+
+}
+
+
+.inputs-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap:20px;
+    width: 80%;
+}
+
+
+.inputs-text input{
+    width: 80%;
+    border:none;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid rgba(0,0,0,.3);
+    border-radius: 20px;
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.inputs-text input::placeholder{
+    color:rgba(0,0,0,.5);
+}
+
+.inputTask span{
+    font-size:40px;
+
+}
+
+.plus-button{
+    width:68%;
+    margin-bottom: 20px;
+}
+
+#addTask{
+    width:100%;
+    background: none;
+    border:none;
+    border: 2px solid rgba(0,0,0,.3);
+    border-radius: 20px;
+    padding: 5px 5px 5px 5px;
+}
+
+#addTask:hover{
+    cursor: pointer;
+}
+
+#addTask:active{
+    background-color: rgba(255,255,255,.5);;
 }
 
 .tasks{
@@ -91,6 +152,10 @@ main{
     width: 30%;
     height: 800px;
     margin: 0;
+}
+
+legend{
+    font-size: 40px;
 }
 
 .inProg{
@@ -108,19 +173,25 @@ main{
 }
 
 .borders{
-    border: 3px solid red;
+    border: 3px solid rgba(254,1,154,.6);
     border-radius: 7px;
     width: 100%;
     height: 100%;
     margin: 0;
 }
 
-
+.borders p{
+    font-size: 20px;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: #ffff;
+}
 
 footer{
     padding-top: 1%;
     padding-bottom: 1%;
-    background-image: linear-gradient(aquamarine,rgb(39, 105, 83));
+    background-image: linear-gradient(0.25turn,#fb66be 5%,#1b2139 10% 30%,#fb66be 50%,#1b2139 70% 90%, #fb66be);
+    border: 1px solid rgba(255,255,255,.35);
 }
 
 .dubna{
