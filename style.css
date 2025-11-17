@@ -252,3 +252,8 @@ footer{
     margin: 0;
     transform: translateY(30%);
 }
+
+.selected{
+    background-color: red;
+    opacity: 0.5;
+}
