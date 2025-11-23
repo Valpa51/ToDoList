@@ -1,12 +1,13 @@
 const button = document.querySelector("#addTask");
 const title = document.querySelector(".title");
 const task = document.querySelector(".task");
-const tasks = document.querySelector(".borders");
-const inProg = document.querySelector('.inProg');
-const done = document.querySelector('.done');
+const tasks = document.querySelector(".borders1");
+const inProg = document.querySelector('.borders2');
+const done = document.querySelector('.borders3');
 
 inProg.addEventListener('drop', (evt)=> {
     evt.preventDefault();
+    UpdateTasks(list_tasks,'prog');
     console.log("drop inProg");
 })
 inProg.addEventListener('dragover', (evt)=> {
@@ -17,6 +18,7 @@ inProg.addEventListener('dragover', (evt)=> {
 
 done.addEventListener('drop', (evt)=> {
     evt.preventDefault();
+    UpdateTasks(list_tasks,'done');
     console.log("drop done");
 })
 done.addEventListener('dragover', (evt)=> {
@@ -29,19 +31,27 @@ let id;
 let draggedIndex = 0;
 !localStorage.list_tasks ? list_tasks = [] : list_tasks = JSON.parse(localStorage.getItem('list_tasks'));
 
-UpdateTasks(list_tasks);
+UpdateTasks(list_tasks, 'tasks');
 
-function UpdateTasks(list){
-    tasks.innerHTML = "";
-    for (let i = 0; i < list.length; i++)
+function UpdateTasks(list, type){
+    if (type == 'tasks')
     {
-        let str = `<div class="taskRow" draggable="true" ondragstart="setDraggedIndex(${i})" ondragend=""
-        data-id=${i}><p>${list[i].title + ": " + list[i].task}</p>
-        <div class=icons>
-        <button class="edit"><img src="image/edit.png"></button>
-        <button class="delete"><img src="image/trash-x.png"></button></div>
-        </div>`;
-        tasks.innerHTML += str;
+        tasks.innerHTML = "";
+        for (let i = 0; i < list.length; i++)
+        {
+            let str = `<div class="taskRow" draggable="true" ondragstart="setDraggedIndex(${i})" ondragend=""
+            data-id=${i}><p>${list[i].title + ": " + list[i].task}</p>
+            <div class=icons>
+            <button class="edit"><img src="image/edit.png"></button>
+            <button class="delete"><img src="image/trash-x.png"></button></div>
+            </div>`;
+            tasks.innerHTML += str;
+        }
+    }
+    else if (type == 'done')
+    {
+        done.innerHTML = "";
+        
     }
 }
 
@@ -81,7 +91,7 @@ button.addEventListener("click", () => {
     title.value = "";
     task.value = "";
     updateLocalStorage();
-    UpdateTasks(list_tasks);
+   UpdateTasks(list_tasks, 'tasks');
 })
 
 
@@ -91,7 +101,7 @@ tasks.addEventListener("click", (e) => { //при любом клике в borde
         const taskRow = e.target.closest('.taskRow'); //ищем ближайщий класс taskRow
         const id = parseInt(taskRow.dataset.id);//берём наш data-атрибут по id
         list_tasks.splice(id,1);//удаление, второе это кол-во
-        UpdateTasks(list_tasks);
+        UpdateTasks(list_tasks, 'tasks');
         updateLocalStorage();
     }
 
@@ -107,7 +117,7 @@ tasks.addEventListener("click", (e) => { //при любом клике в borde
         title.value = currentTask.title;
 
         updateLocalStorage();
-        UpdateTasks(list_tasks);
+        UpdateTasks(list_tasks, 'tasks');
     }
 })
 
@@ -129,11 +139,6 @@ const setDraggedIndex = (index) => {
 
 const drop = (event) => {
     event.preventDefault();
-    console.log(event.target);
-    // if (event.target.closest('inProg'))
-    // {
-
-    // }
 }
 
 tasks.addEventListener('dragstart',(evt) =>{

@@ -173,7 +173,7 @@ legend{
     margin: 0;
 }
 
-.borders{
+.borders1, .borders2, .borders3{
     border: 3px solid rgba(254,1,154,.6);
     border-radius: 7px;
     width: 100%;
