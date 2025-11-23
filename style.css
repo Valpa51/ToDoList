@@ -196,7 +196,8 @@ footer{
 .dubna{
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
 }
 
@@ -214,14 +215,15 @@ footer{
     gap:4px;
 }
 
-#pLogo{
+.pLogo{
     margin: 0;
+    padding: 0;
     position: relative;
     z-index: 1;
 }
 
-#dubnaImg{
-    width: 30%;
+#dubnaImg, #gitHubImg{
+    width: 130px;
 }
 
 .taskRow{
@@ -254,6 +256,6 @@ footer{
 }
 
 .selected{
-    background-color: red;
+    background-color: rgb(255, 0, 195);
     opacity: 0.5;
 }
