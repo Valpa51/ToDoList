@@ -263,3 +263,48 @@ footer{
 .overBorders{
     border-style: dotted;
 }
+
+@media screen and (max-width:1024px) and (max-height:1200px)
+{
+    .ToDoRow
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .inputTask{
+        width: 80%;
+    }
+
+    .tasks, .done, .inProg{
+        width: 80%;
+        height: 700px;
+    }
+    .done{
+        padding-bottom: 20px;
+    }
+
+    #logo{
+        width: 30%;
+    }
+
+    #dubnaImg, #gitHubImg{
+    width: 90px;
+    }
+
+    .borders1, .borders2, .borders3{
+    backdrop-filter: blur(20px);
+    }
+
+    .InColumnFot p{
+        color:whitesmoke;
+    }
+
+    .InColumnFot a:hover{
+        color:black;
+    }
+}
