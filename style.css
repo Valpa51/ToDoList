@@ -259,3 +259,7 @@ footer{
     background-color: rgb(255, 0, 195);
     opacity: 0.5;
 }
+
+.overBorders{
+    border-style: dotted;
+}

@@ -220,6 +220,10 @@ const setDraggedIndex = (index) => {
 
 }
 
+const dragleave = (event) => {
+    event.preventDefault
+}
+
 const drop = (event) => {
     event.preventDefault();
 }
@@ -246,4 +250,35 @@ inProg.addEventListener('dragstart',(evt) =>{
 
 inProg.addEventListener('dragend',(evt) =>{
     evt.target.classList.remove('selected');
+})
+
+tasks.addEventListener('dragover',(evt) =>{
+    tasks.classList.add('overBorders');
+})
+
+tasks.addEventListener('dragleave', (evt) => {
+    tasks.classList.remove('overBorders');
+});
+
+done.addEventListener('dragover',(evt) =>{
+    done.classList.add('overBorders');
+})
+
+done.addEventListener('dragleave',(evt) =>{
+    done.classList.remove('overBorders');
+})
+
+inProg.addEventListener('dragover',(evt) =>{
+    inProg.classList.add('overBorders');
+})
+
+inProg.addEventListener('dragleave',(evt) =>{
+    inProg.classList.remove('overBorders');
+})
+
+document.addEventListener('drop', (evt)=> {
+    tasks.classList.remove('overBorders');
+    inProg.classList.remove('overBorders');
+    done.classList.remove('overBorders');
+    console.log("all drop");
 })
